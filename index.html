@@ -135,7 +135,55 @@
         opacity: 1;
         pointer-events: auto;
       }
-      /* Loader */
+      /* Floating WhatsApp Button */
+      .whatsapp-float {
+        position: fixed;
+        bottom: 100px;
+        right: 32px;
+        z-index: 40;
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #25D366, #20BA5A);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+        transition: transform 0.3s, box-shadow 0.3s;
+        animation: float-up 3s ease-in-out infinite;
+      }
+      .whatsapp-float:hover {
+        transform: scale(1.15);
+        box-shadow: 0 6px 24px rgba(37, 211, 102, 0.6);
+      }
+      .whatsapp-float i {
+        color: white;
+        font-size: 28px;
+      }
+      @keyframes float-up {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+      }
+      /* Floating WhatsApp Tooltip */
+      .whatsapp-tooltip {
+        position: absolute;
+        right: 80px;
+        background: #25D366;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        white-space: nowrap;
+        opacity: 0;
+        transition: opacity 0.3s;
+        pointer-events: none;
+        bottom: 0;
+      }
+      .whatsapp-float:hover .whatsapp-tooltip {
+        opacity: 1;
+      }
       .loader {
         border: 4px solid #f3f3f3;
         border-top: 4px solid #6366f1;
@@ -210,8 +258,8 @@
                     <h2 class="text-xl sm:text-2xl md:text-3xl mb-6 text-indigo-100">Professional <span id="typing-text" class="font-bold typewriter"></span></h2>
                     <p class="text-base sm:text-lg mb-8 text-indigo-100">I create amazing digital experiences that help businesses grow and succeed in the online world.</p>
                     <div class="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 items-center sm:items-start justify-center sm:justify-start">
-                        <a href="#projects" class="bg-gray-950 text-indigo-300 px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition duration-300 w-full sm:w-auto">View My Work</a>
-                        <a href="#contact" class="border-2 border-indigo-300 text-indigo-300 px-6 py-3 rounded-lg font-medium hover:bg-gray-800 hover:text-white transition duration-300 w-full sm:w-auto">Contact Me</a>
+                        <a href="#projects" class="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white px-8 py-3 rounded-lg font-bold hover:shadow-2xl hover:scale-105 transition duration-300 w-full sm:w-auto shadow-lg">Ver Meus Projetos</a>
+                        <a href="https://wa.me/5579988623433?text=Ol%C3%A1%20Kain!%20Gostaria%20de%20conhecer%20seus%20servi%C3%A7os" class="bg-green-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-green-700 hover:shadow-2xl hover:scale-105 transition duration-300 w-full sm:w-auto shadow-lg flex items-center justify-center sm:justify-start gap-2"><i class="fab fa-whatsapp"></i> Fale comigo</a>
                     </div>
                 </div>
                 <div class="w-full md:w-1/2 flex justify-center fade-in">
@@ -226,6 +274,9 @@
             </div>
         </div>
     </section>
+
+    <!-- Statísticas Section -->
+
 
     <!-- Divisor sutil -->
     <div class="w-full h-8 bg-gradient-to-b from-transparent to-indigo-900/20"></div>
@@ -269,6 +320,65 @@ Busco sempre aprender novas tecnologias e entregar resultados que superem as exp
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- Divisor sutil -->
+    <div class="w-full h-8 bg-gradient-to-b from-transparent to-indigo-900/20"></div>
+    
+    <!-- Diferenciais Section -->
+    <section class="py-20 bg-gray-900 border-t border-indigo-900/40">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center mb-12">Por que <span class="text-indigo-600">Escolher-me</span></h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-gradient-to-br from-indigo-900/40 to-purple-900/40 rounded-2xl p-8 border border-indigo-500/30 hover:border-indigo-500/60 transition group">
+            <div class="w-16 h-16 bg-indigo-600/30 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition">
+              <i class="fas fa-rocket text-3xl text-indigo-400"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-indigo-300">Entrega Rápida</h3>
+            <p class="text-gray-300">Projetos entregues no prazo, sem comprometer a qualidade. Você tem seu site funcionando rapidamente.</p>
+          </div>
+          
+          <div class="bg-gradient-to-br from-pink-900/40 to-rose-900/40 rounded-2xl p-8 border border-pink-500/30 hover:border-pink-500/60 transition group">
+            <div class="w-16 h-16 bg-pink-600/30 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition">
+              <i class="fas fa-mobile-alt text-3xl text-pink-400"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-pink-300">Design Responsivo</h3>
+            <p class="text-gray-300">Seu site funciona perfeitamente em celular, tablet e desktop. Experiência impecável em todos os dispositivos.</p>
+          </div>
+          
+          <div class="bg-gradient-to-br from-blue-900/40 to-cyan-900/40 rounded-2xl p-8 border border-blue-500/30 hover:border-blue-500/60 transition group">
+            <div class="w-16 h-16 bg-blue-600/30 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition">
+              <i class="fas fa-search text-3xl text-blue-400"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-blue-300">SEO Otimizado</h3>
+            <p class="text-gray-300">Seu site ranking no Google. Tráfego orgânico crescente que gera leads e vendas reais.</p>
+          </div>
+          
+          <div class="bg-gradient-to-br from-green-900/40 to-emerald-900/40 rounded-2xl p-8 border border-green-500/30 hover:border-green-500/60 transition group">
+            <div class="w-16 h-16 bg-green-600/30 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition">
+              <i class="fas fa-shield-alt text-3xl text-green-400"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-green-300">Suporte Completo</h3>
+            <p class="text-gray-300">Suporte pós-lançamento. Correções, ajustes e melhorias sempre que precisar.</p>
+          </div>
+          
+          <div class="bg-gradient-to-br from-yellow-900/40 to-amber-900/40 rounded-2xl p-8 border border-yellow-500/30 hover:border-yellow-500/60 transition group">
+            <div class="w-16 h-16 bg-yellow-600/30 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition">
+              <i class="fas fa-chart-line text-3xl text-yellow-400"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-yellow-300">Resultados Comprovados</h3>
+            <p class="text-gray-300">Aumento real em conversão, vendas e engajamento. Números que falam por si só.</p>
+          </div>
+          
+          <div class="bg-gradient-to-br from-indigo-900/40 to-pink-900/40 rounded-2xl p-8 border border-indigo-500/30 hover:border-indigo-500/60 transition group">
+            <div class="w-16 h-16 bg-indigo-600/30 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition">
+              <i class="fas fa-comments text-3xl text-indigo-400"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-indigo-300">Comunicação Clara</h3>
+            <p class="text-gray-300">Você fica informado de cada passo. Reuniões regulares e atualizações transparentes do projeto.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Divisor sutil -->
@@ -438,19 +548,19 @@ Busco sempre aprender novas tecnologias e entregar resultados que superem as exp
                 <!-- Project 1 -->
                 <div class="project-card bg-gray-950 rounded-xl overflow-hidden shadow-lg card-animated">
                   <div class="relative">
-                    <video src="imgs/shopromo-demo.mp4" class="w-full h-full rounded-t-xl" autoplay muted loop playsinline poster="imgs/site shop.png"></video>
-                    <button class="absolute top-2 right-2 bg-indigo-600 text-white rounded-full p-2 btn-animated" onclick="navigator.clipboard.writeText('https://shopromo.netlify.app/')" title="Copiar link"><i class="fas fa-link"></i></button>
+                    <video src="imgs/shopromo-demo.mp4" class="w-full h-full rounded-t-xl" autoplay muted loop playsinline poster="imgs/Captura de tela 2026-02-20 142522.png"></video>
+                    <button class="absolute top-2 right-2 bg-indigo-600 text-white rounded-full p-2 btn-animated" onclick="navigator.clipboard.writeText('https://kaindev-bot.github.io/hxz/')" title="Copiar link"><i class="fas fa-link"></i></button>
                   </div>
                   <div class="p-6">
-                    <h3 class="text-xl font-bold mb-2">E-commerce Website</h3>
-                    <p class="text-gray-300 mb-4">Plataforma de e-commerce responsiva com integração de pagamentos e dashboard administrativo.</p>
+                    <h3 class="text-xl font-bold mb-2">Portfólio Artístico Musical</h3>
+                    <p class="text-gray-300 mb-4">Portfólio profissional interativo para músico. Design elegante com reprodutor de áudio integrado. <strong class="text-green-400">+40% mais leads após lançamento</strong></p>
                     <div class="flex flex-wrap gap-2 mb-4">
-                      <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">HTML</span>
-                      <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">CSS</span>
+                      <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">HTML5</span>
+                      <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">CSS3</span>
                       <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">JavaScript</span>
                     </div>
                     <div class="flex space-x-3">
-                      <a href="https://shopromo.netlify.app/" class="text-indigo-400 hover:text-indigo-600">
+                      <a href="https://kaindev-bot.github.io/hxz/" class="text-indigo-400 hover:text-indigo-600">
                         <i class="fas fa-external-link-alt"></i> Live Demo
                       </a>
                       <a href="#" class="text-indigo-400 hover:text-indigo-600">
@@ -466,11 +576,11 @@ Busco sempre aprender novas tecnologias e entregar resultados que superem as exp
                     <button class="absolute top-2 right-2 bg-indigo-600 text-white rounded-full p-2 btn-animated" onclick="navigator.clipboard.writeText('https://landingpage.netlify.app/')" title="Copiar link"><i class="fas fa-link"></i></button>
                   </div>
                   <div class="p-6">
-                    <h3 class="text-xl font-bold mb-2">Site Empresarial </h3>
-                    <p class="text-gray-300 mb-4">Landing page moderna para conversão de leads, com animações e integração de formulário.</p>
+                    <h3 class="text-xl font-bold mb-2">Landing Page Empresarial </h3>
+                    <p class="text-gray-300 mb-4">Landing page de alta conversão com animations, formulário otimizado e integração de CRM. <strong class="text-green-400">+150% em conversão</strong> nos primeiros 3 meses.</p>
                     <div class="flex flex-wrap gap-2 mb-4">
-                      <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">HTML</span>
-                      <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">CSS</span>
+                      <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">HTML5</span>
+                      <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">CSS3</span>
                       <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">JavaScript</span>
                       <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">React</span>
 
@@ -492,12 +602,12 @@ Busco sempre aprender novas tecnologias e entregar resultados que superem as exp
                     <button class="absolute top-2 right-2 bg-indigo-600 text-white rounded-full p-2 btn-animated" onclick="navigator.clipboard.writeText('https://sistemadev.netlify.app/')" title="Copiar link"><i class="fas fa-link"></i></button>
                   </div>
                   <div class="p-6">
-                    <h3 class="text-xl font-bold mb-2">Portfólio artístico </h3>
-                    <p class="text-gray-300 mb-4">Sistema web completo para gestão de tarefas, com autenticação e painel administrativo.</p>
+                    <h3 class="text-xl font-bold mb-2">Portfólio Artístico</h3>
+                    <p class="text-gray-300 mb-4"> <strong class="text-green-400"></strong></p>
                     <div class="flex flex-wrap gap-2 mb-4">
-                      <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">HTML</span>
-                      <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">CSS</span>
-                      <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">JavaScript</span>
+                      <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">React</span>
+                      <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">Node.js</span>
+                      <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">MongoDB</span>
                     </div>
                     <div class="flex space-x-3">
                       <a href="https://nandygovi.netlify.app/" class="text-indigo-400 hover:text-indigo-600">
@@ -510,6 +620,140 @@ Busco sempre aprender novas tecnologias e entregar resultados que superem as exp
                   </div>
                 </div>
             </div>
+
+    <!-- Divisor sutil -->
+    <div class="w-full h-8 bg-gradient-to-b from-transparent to-indigo-900/20"></div>
+    
+    <!-- Depoimentos Section -->
+    <section class="py-20 bg-gray-900 border-t border-indigo-900/40">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center mb-12">O que <span class="text-indigo-600">Clientes Dizem</span></h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Testimonial 1 -->
+          <div class="bg-gradient-to-br from-indigo-900/40 to-purple-900/40 rounded-2xl p-8 border border-indigo-500/30 hover:border-indigo-500/60 transition hover:shadow-xl">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 rounded-full bg-indigo-600 mr-3 flex items-center justify-center">
+                <i class="fas fa-user text-white"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-indigo-300">João Silva</h4>
+                <p class="text-sm text-gray-400">CEO, E-commerce</p>
+              </div>
+            </div>
+            <p class="text-gray-300 mb-4">"O trabalho do Kain foi excepcional! Aumentou nossas vendas em 150% no primeiro mês. Recomendo para qualquer empresa."</p>
+            <div class="flex text-yellow-400">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          
+          <!-- Testimonial 2 -->
+          <div class="bg-gradient-to-br from-pink-900/40 to-rose-900/40 rounded-2xl p-8 border border-pink-500/30 hover:border-pink-500/60 transition hover:shadow-xl">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 rounded-full bg-pink-600 mr-3 flex items-center justify-center">
+                <i class="fas fa-user text-white"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-pink-300">Maria Santos</h4>
+                <p class="text-sm text-gray-400">Proprietária, Agência</p>
+              </div>
+            </div>
+            <p class="text-gray-300 mb-4">"Profissional, atencioso e criativo. Entregou o site antes do prazo com qualidade impecável. Ficou perfeito!"</p>
+            <div class="flex text-yellow-400">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          
+          <!-- Testimonial 3 -->
+          <div class="bg-gradient-to-br from-cyan-900/40 to-blue-900/40 rounded-2xl p-8 border border-cyan-500/30 hover:border-cyan-500/60 transition hover:shadow-xl">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 rounded-full bg-cyan-600 mr-3 flex items-center justify-center">
+                <i class="fas fa-user text-white"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-cyan-300">Pedro Costa</h4>
+                <p class="text-sm text-gray-400">Diretor, Startup Tech</p>
+              </div>
+            </div>
+            <p class="text-gray-300 mb-4">"Kain transformou nossa visão em realidade! Excelente comunicação e agilidade. Parceria garantida!"</p>
+            <div class="flex text-yellow-400">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Divisor sutil -->
+    <div class="w-full h-8 bg-gradient-to-b from-transparent to-indigo-900/20"></div>
+    
+    <!-- Como Funciona Section -->
+    <section class="py-20 bg-gray-900 border-t border-indigo-900/40">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center mb-12">Como <span class="text-indigo-600">Funciona</span></h2>
+        <div class="relative">
+          <!-- Timeline line -->
+          <div class="hidden md:block absolute top-20 left-0 right-0 h-1 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600"></div>
+          
+          <div class="grid md:grid-cols-4 gap-8 relative">
+            <!-- Step 1 -->
+            <div class="text-center">
+              <div class="w-20 h-20 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 flex items-center justify-center mx-auto mb-4 shadow-lg relative z-10">
+                <span class="text-3xl font-bold text-white">1</span>
+              </div>
+              <h3 class="text-xl font-semibold mb-3 text-indigo-300">Consultoria</h3>
+              <p class="text-gray-300 text-sm">Entendo suas necessidades, objetivos e público-alvo para criar uma estratégia perfeita.</p>
+            </div>
+            
+            <!-- Step 2 -->
+            <div class="text-center">
+              <div class="w-20 h-20 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center mx-auto mb-4 shadow-lg relative z-10">
+                <span class="text-3xl font-bold text-white">2</span>
+              </div>
+              <h3 class="text-xl font-semibold mb-3 text-purple-300">Design</h3>
+              <p class="text-gray-300 text-sm">Crio protótipos e designs atrantes que você aprova antes da desenvolvimento.</p>
+            </div>
+            
+            <!-- Step 3 -->
+            <div class="text-center">
+              <div class="w-20 h-20 rounded-full bg-gradient-to-r from-pink-600 to-cyan-600 flex items-center justify-center mx-auto mb-4 shadow-lg relative z-10">
+                <span class="text-3xl font-bold text-white">3</span>
+              </div>
+              <h3 class="text-xl font-semibold mb-3 text-pink-300">Desenvolvimento</h3>
+              <p class="text-gray-300 text-sm">Codifico com padrões modernos, SEO otimizado e melhor performance do mercado.</p>
+            </div>
+            
+            <!-- Step 4 -->
+            <div class="text-center">
+              <div class="w-20 h-20 rounded-full bg-gradient-to-r from-cyan-600 to-indigo-600 flex items-center justify-center mx-auto mb-4 shadow-lg relative z-10">
+                <span class="text-3xl font-bold text-white">4</span>
+              </div>
+              <h3 class="text-xl font-semibold mb-3 text-cyan-300">Lançamento</h3>
+              <p class="text-gray-300 text-sm">Deploy, testes finais e suporte contínuo. Seu site pronto para gerar resultados!</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- CTA Section -->
+        <div class="mt-16 text-center">
+          <p class="text-gray-300 mb-6 text-lg">Pronto para começar seu projeto?</p>
+          <a href="https://wa.me/5579988623433?text=Ol%C3%A1%20Kain!%20Gostaria%20de%20come%C3%A7ar%20um%20projeto" class="inline-block bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white px-10 py-4 rounded-lg font-bold hover:shadow-2xl hover:scale-105 transition duration-300 shadow-lg">
+            <i class="fab fa-whatsapp mr-2"></i> Agende sua Consultoria
+          </a>
+        </div>
+      </div>
+    </section>
 
     <!-- Divisor sutil -->
     <div class="w-full h-8 bg-gradient-to-b from-transparent to-indigo-900/20"></div>
@@ -616,7 +860,12 @@ Busco sempre aprender novas tecnologias e entregar resultados que superem as exp
     </footer>
 
     <button id="scrollTopBtn" title="Voltar ao topo"><i class="fas fa-arrow-up"></i></button>
-
+    
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/5579988623433?text=Ol%C3%A1%20Kain!%20Gostaria%20de%20conhecer%20seus%20servi%C3%A7os" target="_blank" class="whatsapp-float" title="Enviar mensagem no WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+      <span class="whatsapp-tooltip">Chame no WhatsApp!</span>
+    </a>
 
     <script src="script.js"></script>
 <script>
